@@ -17,8 +17,8 @@ function Movement.chase(host, target, dt)
 end
 
 function Movement.flee(host, predator, dt)
-    local dx = creature.x - predator.x
-    local dy = creature.y - predator.y
+    local dx = host.x - predator.x
+    local dy = host.y - predator.y
 
     local dist = math.sqrt(dx*dx + dy*dy)
     if dist == 0 then return end
@@ -28,10 +28,10 @@ function Movement.flee(host, predator, dt)
     local angle = math.atan2(dy, dx)
     angle = angle + (math.random() - 0.5) * 0.8 
 
-    local tx = creature.x + math.cos(angle) * 50
-    local ty = creature.y + math.sin(angle) * 50
+    local tx = host.x + math.cos(angle) * 50
+    local ty = host.y + math.sin(angle) * 50
 
-    Movement.accelerateToward(tx, ty, dt, creature)
+    Movement.accelerateToward(host, tx, ty, dt)
 end
 
 function Movement.wander(host, dt)
@@ -70,7 +70,7 @@ function Movement.keepInBounds(host, width, height)
 end
 
 function Movement.updMovement(host, creatures, dt)
-    local predator = creature:nearestPredator(creatures)
+    local predator = host:nearestPredator(creatures)
 
     if predator then
         Movement.flee(host, predator, dt)
@@ -89,4 +89,3 @@ end
 return Movement
 
 
---duUDE i generated like all of this script with ai #neveragain iunno what the fuck is going on lmao
