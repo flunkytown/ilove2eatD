@@ -20,6 +20,7 @@ function creature:new(type, x, y)
     self.reproCooldown = 0
     self.currentTime = 0
     self.duration = 0
+    self.fullTimer = 0
 
     self.metabolism = t.metabolism
     self.rad = t.rad
@@ -41,6 +42,7 @@ creature.checkEat = Feeding.checkEat
 creature.canEat = Feeding.canEat
 
 function creature:update(dt, creatures)
+    self.fullTimer = math.max(0, self.fullTimer - dt)
     self:updEnergy(dt)
     if self.dead then return end
 
@@ -87,7 +89,7 @@ function creature:nearestPrey(creatures)
             local dx = other.x - self.x
             local dy = other.y - self.y
             local d = dx*dx + dy*dy
-            if d < bestDist then
+            if d < bestDist and d < 150*150 then
                 bestDist = d
                 nearest = other
             end
@@ -105,7 +107,7 @@ function creature:nearestPredator(creatures)
             local dx = other.x - self.x
             local dy = other.y - self.y
             local d = dx*dx + dy*dy
-            if d < bestDist then
+            if d < bestDist and d < 150*150 then
                 bestDist = d
                 nearest = other
             end
