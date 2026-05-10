@@ -1,5 +1,7 @@
 SCHOOL {RPJECT THING!!!!!!!!!!!!!!!!!!!!!!
 
+little animals that evolve over time.
+
 what i HAVE dpme:::
 
 1. circle that moves
@@ -12,4 +14,5 @@ what im GONNA do::::
 
 1. revise all of this tbh its really messy and just bad
 2. revise textures 2 be better
-
+3. add memory type stuff like failed chases by animals get stored so over time they avoid certain species
+4. give social genes so they like do more stuff than just walk around
