@@ -1,7 +1,4 @@
---the information about the creatures such as their size, metabolism, et cetera is here and is to be used by creature.lua
---spitballing idea,, the creature's type is determined via a small string of "DNA" that reflects the behaviour & traits
---e.g "LHeDApHm" is a Large Herbivore that is Docile, but aggressive when provoked. It has a High Metabolism.
---in each string any following lowercase letter is related in some way to the preceding uppercase letter. E.g "He" = Herbivore, while "Hm" = High Metabolism. The uppercase letters are the main traits, while the lowercase letters are modifiers that further specify the trait &/or further seperate to reduce confusion.
+
 DNA = {
     ---PHYSICAL ATTRIBUTES---
     --important--
@@ -50,6 +47,4 @@ Keys = {
     --behaviour = {"Do", "Ag", "Ap", "Co", "Hr"}
 } --keys is for random generator
 
-
---maybe these could be the main traits but then theres like "Co" for colour and "Sh" for shape (everyone is a damned trongle!!!)
---maybe also give them herd things. "Hr" 4 herd or "So" 4 solitary
+--icl i write comments like a faggot 
